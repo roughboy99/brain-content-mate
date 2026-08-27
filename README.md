@@ -1,15 +1,20 @@
-# Class 7 — Content Mate
+# Content Mate
 
 **An optional side class in *The Brain That Runs a Company*.** One node holds the wiring
 for a hundred and six. That pattern is worth more than the workflow it came in.
 
 > **Student front door: https://roughboy99.github.io/brain-class-07/**
 >
-> That page is the show notes — the cost gate, the credits, the run of the hour, the
-> traps, and the one command. Open it during the class and follow along.
+> That page is the reference — the cost gate, the credits, the stack named honestly, the
+> traps, and the one command. The eight lessons live in the classroom; this page is what
+> you keep open beside them.
 
-Wednesday 23 September 2026, 11:00 AM ET · Skool live room ·
+**Eight lessons, in the classroom, watched at your own pace** ·
 [AI Automations by Hector](https://www.skool.com/ai-automations-by-hector-8106)
+
+> This used to be Class 7, delivered live. It moved to the classroom on 2026-08-27 — the
+> outline held 95 minutes of material against a 60-minute hour, nothing else in the series
+> depends on it, and a nine-provider video pipeline is a bad thing to demo live.
 
 ---
 
@@ -50,7 +55,8 @@ Classes 3 and 4 host their zip here. **This one does not, and that is deliberate
 
 Andy's permission covers teaching and sharing this **in AI Auto Base**. A GitHub Pages URL
 is open to anyone with the link — that is not the community. So the zip lives in the pinned
-Class 7 post, and the installer works from the copy you already downloaded.
+Content Mate classroom section, and the installer works from the copy you already
+downloaded.
 
 **The checksum is published**, so you can still prove your copy is the real one:
 
@@ -100,7 +106,7 @@ form works on Mac and Linux and truncates silently on Windows.
 
 | Path | What it is |
 |---|---|
-| [`index.html`](index.html) | **The show notes.** The cost gate, the credits, the stack named honestly, the run of the hour, what breaks |
+| [`index.html`](index.html) | **The reference page.** The cost gate, the credits, the stack named honestly, what breaks |
 | [`install.txt`](install.txt) | What the one command fetches |
 | [`setup-gate.html`](setup-gate.html) | The nine accounts in order, with costs, the two slow ones, and the traps |
 | [`downloads/SHA256SUMS`](downloads/SHA256SUMS) | The checksum. **The zip itself is in the Skool post** |
@@ -137,7 +143,7 @@ directly will use his. Neither of us hides it.
 
 ---
 
-## What you need before class
+## What you need before you start
 
 | | |
 |---|---|
