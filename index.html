@@ -97,6 +97,13 @@
   .credit{background:linear-gradient(135deg,rgba(43,108,176,.16),transparent);border:1px solid var(--blue);border-radius:12px;padding:22px 24px;margin:18px 0}
   .credit h3{margin-top:0;color:#9dc4ee}
 
+  /* Marks an affiliate link inline, at the point of the link, so nobody has to
+     scroll to a footer to find out. Quiet, not shouty - but unmissable. */
+  .afftag{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.9px;
+          text-transform:uppercase;padding:2px 6px;border-radius:4px;
+          background:rgba(212,168,67,.18);color:#f0d08a;font-weight:700;
+          vertical-align:middle;margin-left:3px}
+
   .organs{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:20px 0}
   .organ{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 8px;text-align:center}
   .organ.today{border-color:var(--gold);background:linear-gradient(180deg,rgba(212,168,67,.14),transparent)}
@@ -288,15 +295,16 @@
       <table>
         <thead><tr><th>Step</th><th>Provider</th></tr></thead>
         <tbody>
-          <tr><td>Source material</td><td>twitterapi.io, reading X</td></tr>
-          <tr><td>Script, captions, research</td><td>OpenAI — <code>o3</code>, <code>gpt-4.1-mini</code>, <code>gpt-4o-mini-search-preview</code></td></tr>
-          <tr><td>Avatar clip and lip-sync</td><td><strong>Replicate</strong> — Veo 3.1, and <code>pixverse/lipsync</code></td></tr>
-          <tr><td>Voice, and per-word caption timings</td><td>ElevenLabs — TTS, then Scribe</td></tr>
+          <tr><td>Source material</td><td><a href="https://twitterapi.io" target="_blank" rel="noopener noreferrer">twitterapi.io</a>, reading X</td></tr>
+          <tr><td>Script, captions, research</td><td><a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">OpenAI</a> — <code>o3</code>, <code>gpt-4.1-mini</code>, <code>gpt-4o-mini-search-preview</code></td></tr>
+          <tr><td>Avatar clip and lip-sync</td><td><strong><a href="https://replicate.com/account/api-tokens" target="_blank" rel="noopener noreferrer">Replicate</a></strong> — Veo 3.1, and <code>pixverse/lipsync</code></td></tr>
+          <tr><td>Voice, and per-word caption timings</td><td><a href="https://try.elevenlabs.io/wnvu5zc9tcly" target="_blank" rel="noopener noreferrer">ElevenLabs</a> <span class="afftag">affiliate</span> — TTS, then Scribe</td></tr>
           <tr><td>Assembly</td><td>ffmpeg, inside n8n, six Execute Command nodes</td></tr>
-          <tr><td>Storage</td><td>Google Drive</td></tr>
-          <tr><td>Publishing</td><td>Blotato → nine platforms</td></tr>
-          <tr><td>Notification</td><td>Telegram</td></tr>
-          <tr><td>Control panel</td><td>Airtable</td></tr>
+          <tr><td>The box it runs on</td><td><a href="https://www.hostinger.com?REFERRALCODE=DI1ROUGHBIMS" target="_blank" rel="noopener noreferrer">Hostinger</a> <span class="afftag">affiliate</span> — or any VPS with Docker</td></tr>
+          <tr><td>Storage</td><td><a href="https://drive.google.com" target="_blank" rel="noopener noreferrer">Google Drive</a></td></tr>
+          <tr><td>Publishing</td><td><a href="https://blotato.com/?ref=hectoret" target="_blank" rel="noopener noreferrer">Blotato</a> <span class="afftag">affiliate</span> → nine platforms</td></tr>
+          <tr><td>Notification</td><td><a href="https://t.me/BotFather" target="_blank" rel="noopener noreferrer">Telegram</a></td></tr>
+          <tr><td>Control panel</td><td><a href="https://airtable.com" target="_blank" rel="noopener noreferrer">Airtable</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -434,10 +442,35 @@ Telegram                       -&gt;  tells you it went out</pre>
       <p><strong>Blotato's per-platform connections</strong> and <strong>adding credit to OpenAI.</strong> Start those first. Everything else can be done in an afternoon.</p>
     </div>
 
-    <div class="note">
-      <div class="note-t">Affiliate disclosure</div>
-      <p>The Hostinger link in <code>PREFLIGHT.md</code> is my affiliate link and AI Auto Base earns a commission on purchases through it. <strong>Any VPS with Docker works</strong> — the document says so at the point of the link. Andy's own guide carries his referral link too. Neither of us hides it.</p>
+    <h3>Where I make money on this, and where I don't</h3>
+    <p><strong>Four of the links on this page are my affiliate links. The rest are not.</strong> Here is the whole picture rather than a line in a footer.</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>Provider</th><th>My link</th><th>What it costs you</th></tr></thead>
+        <tbody>
+          <tr><td><strong><a href="https://www.hostinger.com?REFERRALCODE=DI1ROUGHBIMS" target="_blank" rel="noopener noreferrer">Hostinger</a></strong> — the VPS<br><span style="font-size:12.5px;color:var(--muted)">plain: <a href="https://www.hostinger.com" target="_blank" rel="noopener noreferrer">hostinger.com</a></span></td><td><span class="afftag">affiliate</span></td><td>Nothing extra. Same price with or without my code</td></tr>
+          <tr><td><strong><a href="https://hostgator.pvxt.net/JK3QKE" target="_blank" rel="noopener noreferrer">HostGator</a></strong> — alternative VPS<br><span style="font-size:12.5px;color:var(--muted)">plain: <a href="https://www.hostgator.com" target="_blank" rel="noopener noreferrer">hostgator.com</a></span></td><td><span class="afftag">affiliate</span></td><td>Nothing extra. <em>Not what this class was tested on</em></td></tr>
+          <tr><td><strong><a href="https://blotato.com/?ref=hectoret" target="_blank" rel="noopener noreferrer">Blotato</a></strong><br><span style="font-size:12.5px;color:var(--muted)">plain: <a href="https://www.blotato.com" target="_blank" rel="noopener noreferrer">blotato.com</a></span></td><td><span class="afftag">affiliate</span></td><td>Nothing extra. 7-day free trial either way</td></tr>
+          <tr><td><strong><a href="https://try.elevenlabs.io/wnvu5zc9tcly" target="_blank" rel="noopener noreferrer">ElevenLabs</a></strong><br><span style="font-size:12.5px;color:var(--muted)">plain: <a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer">elevenlabs.io</a></span></td><td><span class="afftag">affiliate</span></td><td>Nothing extra. The free tier still applies</td></tr>
+          <tr><td>Airtable · Replicate · OpenAI · twitterapi.io · Google Drive · Telegram</td><td>plain links</td><td>I earn nothing</td></tr>
+        </tbody>
+      </table>
     </div>
+
+    <div class="note">
+      <div class="note-t">What an affiliate link actually does</div>
+      <p>It tags the sign-up so the provider knows it came from me, and they pay me a share. <strong>You pay exactly the same price.</strong> There is no version of these links that costs you more, and none of them unlock anything special.</p>
+      <p style="margin-bottom:0">The plain domain is printed next to every one of them on the <a href="setup-gate.html">setup gate</a>. Use that instead if you would rather — nothing about the class changes.</p>
+    </div>
+
+    <div class="danger">
+      <div class="danger-t">The thing an affiliate link should never do</div>
+      <p><strong>Talk you into a class you should skip.</strong> This one costs $35–100 every month, and most people should not take it.</p>
+      <p style="margin-bottom:0">That is why the cost gate is the first thing on this page and the first thing the installer asks you about. If the honest answer is <em>"I don't publish video on a schedule"</em>, close the page. I would rather you did that than sign up for four services through my links and cancel them in three weeks.</p>
+    </div>
+
+    <p style="font-size:13.5px;color:var(--muted)">Andy's own setup guide carries his Hostinger referral link. Members following his guide directly will use his. Neither of us hides it.</p>
   </section>
 
   <!-- ═══════════ CLOSE ═══════════ -->

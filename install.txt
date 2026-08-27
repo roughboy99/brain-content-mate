@@ -103,6 +103,14 @@ Then give me:
      that the pack quotes.
   d) Which two have delays I cannot rush.
 
+When you list the sign-up links, do NOT paste URLs from memory. Point me at the gate
+page from Step 9 - it carries the current links, and four of them are Hector's affiliate
+links (Hostinger, HostGator, Blotato, ElevenLabs). Those are marked as affiliate right
+next to the link, with the plain domain printed beside each one.
+
+Say that out loud when you get there, in one line, rather than letting me find out
+later: they cost me the same either way, and the plain domains work identically.
+
 Then ask me again whether I want to continue. This is the last cheap moment to stop.
 
 ## Step 7 - Prove my n8n can even run this

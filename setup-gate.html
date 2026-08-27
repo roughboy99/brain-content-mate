@@ -41,6 +41,13 @@
   .step-tick{margin-left:auto;display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted);cursor:pointer;white-space:nowrap}
   .step-tick input{width:17px;height:17px;accent-color:var(--green);cursor:pointer}
 
+  /* Affiliate disclosure, at the point of the link. Quiet enough not to shout,
+     legible enough that nobody can say it was hidden. */
+  .aff{font-size:12.5px;color:var(--muted);margin:8px 0 0;line-height:1.5;
+       border-left:2px solid var(--border);padding-left:11px}
+  .aff a{color:#7f9fc4}
+  .aff b{color:var(--body);font-weight:600}
+
   .bring{background:rgba(22,163,74,.08);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:11px 15px;margin-top:11px}
   .bring-t{font-family:var(--mono);font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:#6ee7a0;font-weight:700;margin-bottom:4px}
   .bring p:last-child{margin-bottom:0}
@@ -145,7 +152,12 @@ docker compose up -d</pre></div>
       <div class="note-t">HTTPS is not optional</div>
       <p>The Airtable buttons call your webhooks, and <strong>Airtable will not call plain HTTP.</strong> You need a green padlock.</p>
     </div>
-    <p style="font-size:13.5px;color:var(--muted)"><em>Hostinger's KVM 2 is what we tested against. <a href="https://www.hostinger.com?REFERRALCODE=DI1ROUGHBIMS" target="_blank" rel="noopener noreferrer">This is Hector's affiliate link</a> — AI Auto Base earns a commission if you buy through it. Any VPS with Docker works, and hostinger.com without the code works too.</em></p>
+    <h3 style="font-size:14.5px;margin:16px 0 6px">Where to get one</h3>
+    <a class="btn" href="https://www.hostinger.com?REFERRALCODE=DI1ROUGHBIMS" target="_blank" rel="noopener noreferrer">Hostinger — KVM 2 →</a>
+    <a class="btn ghost" href="https://hostgator.pvxt.net/JK3QKE" target="_blank" rel="noopener noreferrer">HostGator VPS →</a>
+    <p class="aff"><b>Both of those are my affiliate links</b> — AI Auto Base earns a commission if you buy through them, at no extra cost to you. <a href="https://www.hostinger.com" target="_blank" rel="noopener noreferrer">hostinger.com</a> and <a href="https://www.hostgator.com" target="_blank" rel="noopener noreferrer">hostgator.com</a> without the codes work identically.</p>
+    <p class="aff"><b>Hostinger's KVM 2 is the one this class was actually tested against</b>, and it is what Andy's guide uses. HostGator is there because some of you already have an account — I have not run this workflow on it, so if you pick it you are the first, and I would want to hear how it goes.</p>
+    <p class="aff"><b>Any VPS with Docker works.</b> If you already pay for one, use that and skip both links — 2 GB of RAM is enough.</p>
     <div class="bring"><div class="bring-t">Bring</div><p>Your n8n URL, logged in, with a green padlock</p></div>
   </div>
 
@@ -153,9 +165,10 @@ docker compose up -d</pre></div>
   <div class="step slow" data-step="3">
     <div class="step-head"><div class="step-num gold">3</div><div class="step-title">Blotato</div><span class="cost slowtag">$29/mo · SLOW</span>
       <label class="step-tick"><input type="checkbox"> done</label></div>
-    <p>One API in front of nine platforms. No free tier.</p>
-    <a class="btn" href="https://www.blotato.com" target="_blank" rel="noopener noreferrer">Sign up →</a>
+    <p>One API in front of nine platforms. No free tier, and there is a 7-day free trial on every plan.</p>
+    <a class="btn" href="https://blotato.com/?ref=hectoret" target="_blank" rel="noopener noreferrer">Sign up →</a>
     <a class="btn ghost" href="https://my.blotato.com/settings" target="_blank" rel="noopener noreferrer">Get your keys →</a>
+    <p class="aff">That sign-up link is my affiliate link — AI Auto Base earns a commission if you subscribe through it, at no extra cost to you. <a href="https://www.blotato.com" target="_blank" rel="noopener noreferrer">blotato.com</a> without it works exactly the same.</p>
     <div class="warn">
       <div class="warn-t">Start this first — every platform runs its own approval</div>
       <p>Days ahead, not the night before. <strong>Connect only the platforms you actually use.</strong> Nine is the maximum, not the target.</p>
@@ -182,7 +195,8 @@ docker compose up -d</pre></div>
     <div class="step-head"><div class="step-num">5</div><div class="step-title">ElevenLabs</div><span class="cost">free 10k chars, then $5/mo</span>
       <label class="step-tick"><input type="checkbox"> done</label></div>
     <p>Two jobs here: it speaks the script, and its <strong>Scribe</strong> model returns per-word timings that the captions are built from. Captions are aligned to the audio, not guessed.</p>
-    <a class="btn" href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer">ElevenLabs →</a>
+    <a class="btn" href="https://try.elevenlabs.io/wnvu5zc9tcly" target="_blank" rel="noopener noreferrer">ElevenLabs →</a>
+    <p class="aff">Affiliate link — AI Auto Base earns a commission if you subscribe, at no extra cost to you. <a href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer">elevenlabs.io</a> works the same. <b>The free tier's 10,000 characters is genuinely enough to get through this class</b> — do not pay until you have run one video end to end.</p>
     <p>API key from Profile → API Keys. Then pick a voice and copy its <strong>voice ID from the URL</strong> — a stock voice or your own clone.</p>
     <div class="bring"><div class="bring-t">Bring</div><p>API key, and one voice ID</p></div>
   </div>
@@ -237,6 +251,43 @@ docker compose up -d</pre></div>
     </div>
     <div class="bring"><div class="bring-t">Bring</div><p>Bot token and chat ID</p></div>
   </div>
+
+  <!-- DISCLOSURE -->
+  <h2>Where I make money on this, and where I don't</h2>
+
+  <p>Three of the nine sign-ups above are my affiliate links. <strong>Six are not.</strong> Here is the whole picture, so you are not left guessing which is which.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Provider</th><th>Link above</th><th>What it costs you</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Hostinger</strong> (VPS)</td><td><strong>Affiliate</strong></td><td>Nothing extra. Same price with or without my code</td></tr>
+        <tr><td><strong>HostGator</strong> (VPS)</td><td><strong>Affiliate</strong></td><td>Nothing extra. <em>Not what this class was tested on</em></td></tr>
+        <tr><td><strong>Blotato</strong></td><td><strong>Affiliate</strong></td><td>Nothing extra. 7-day free trial either way</td></tr>
+        <tr><td><strong>ElevenLabs</strong></td><td><strong>Affiliate</strong></td><td>Nothing extra. The free tier still applies</td></tr>
+        <tr><td>Airtable</td><td>plain link</td><td>—</td></tr>
+        <tr><td>Replicate</td><td>plain link</td><td>—</td></tr>
+        <tr><td>OpenAI</td><td>plain link</td><td>—</td></tr>
+        <tr><td>twitterapi.io</td><td>plain link</td><td>—</td></tr>
+        <tr><td>Google Drive</td><td>plain link</td><td>—</td></tr>
+        <tr><td>Telegram</td><td>plain link</td><td>free</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <div class="note-t">What an affiliate link actually does here</div>
+    <p>It tags the sign-up so the provider knows it came from me, and they pay me a share. <strong>You pay exactly the same price</strong> — there is no version of these links that costs you more, and none of them unlock anything special either.</p>
+    <p style="margin-bottom:0">Every one of them has the plain domain printed next to it. Use that instead if you would rather, and nothing about the class changes.</p>
+  </div>
+
+  <div class="warn">
+    <div class="warn-t">The thing an affiliate link should never do</div>
+    <p>Talk you into a class you should skip. <strong>This one costs $35–100 a month and most people should not take it</strong> — that is the first thing the show notes say and the first thing the installer asks you.</p>
+    <p style="margin-bottom:0">If the honest answer is "I don't publish video on a schedule", the right move is to close this page. I would rather you did that than sign up for four services through my links and cancel them in three weeks.</p>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--muted)">Andy's own setup guide carries his Hostinger referral link. Members following his guide directly will use his. Neither of us hides it.</p>
 
   <!-- SETUP TABLE -->
   <h2>Bring this filled in</h2>

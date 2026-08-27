@@ -110,6 +110,33 @@ reference no external resources.
 
 ---
 
+## Where I make money on this, and where I don't
+
+**Four of the links on the class pages are my affiliate links. The rest are not.**
+
+| Provider | My link | What it costs you |
+|---|---|---|
+| **[Hostinger](https://www.hostinger.com?REFERRALCODE=DI1ROUGHBIMS)** — the VPS | **affiliate** | Nothing extra. Same price with or without my code |
+| **[HostGator](https://hostgator.pvxt.net/JK3QKE)** — alternative VPS | **affiliate** | Nothing extra. *Not what this class was tested on* |
+| **[Blotato](https://blotato.com/?ref=hectoret)** | **affiliate** | Nothing extra. 7-day free trial either way |
+| **[ElevenLabs](https://try.elevenlabs.io/wnvu5zc9tcly)** | **affiliate** | Nothing extra. The free tier still applies |
+| Airtable · Replicate · OpenAI · twitterapi.io · Google Drive · Telegram | plain links | I earn nothing |
+
+An affiliate link tags the sign-up so the provider knows it came from me, and they pay me
+a share. **You pay exactly the same price** — there is no version of these that costs you
+more, and none of them unlock anything special. The plain domain is printed next to every
+one of them on the setup gate.
+
+**What an affiliate link should never do is talk you into a class you should skip.** This
+one costs $35–100 every month and most people should not take it — which is why the cost
+gate is the first thing on the page and the first thing the installer asks about. If the
+honest answer is *"I don't publish video on a schedule"*, close the page.
+
+Andy's own setup guide carries his Hostinger referral link. Members following his guide
+directly will use his. Neither of us hides it.
+
+---
+
 ## What you need before class
 
 | | |
