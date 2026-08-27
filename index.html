@@ -171,6 +171,7 @@
       <li><a href="#video">How a video gets built</a></li>
       <li><a href="#posting">Nine platforms</a></li>
       <li><a href="#approve">Approve or deny</a></li>
+      <li><a href="#calendar">The calendar</a></li>
       <li><a href="#breaks">What breaks</a></li>
       <li><a href="#cost">What it costs</a></li>
     </ul>
@@ -251,7 +252,7 @@
           <tr><td>4</td><td><strong>Where the content actually comes from</strong></td><td>The Ideas table, and the duplicate check nobody demos</td></tr>
           <tr><td>5</td><td><strong>How a video gets built</strong></td><td>Provider by provider, and the $1.60 clip you do not have to buy</td></tr>
           <tr><td>6</td><td><strong>Nine platforms, one API</strong></td><td>Why nine is a maximum rather than a goal</td></tr>
-          <tr><td>7</td><td><strong>Approve or deny</strong></td><td>Your ten minutes a day, and why nothing posts unseen</td></tr>
+          <tr><td>7</td><td><strong>Approve or deny</strong></td><td>Your ten minutes a day, why nothing posts unseen, and the calendar</td></tr>
           <tr><td>8</td><td><strong>What breaks, and how to read it</strong></td><td>Every failure we hit, read out loud rather than listed</td></tr>
         </tbody>
       </table>
@@ -302,9 +303,9 @@
     </div>
 
     <div class="code"><div class="code-label">verify the file you downloaded</div><button class="cp" type="button">copy</button>
-<pre>sha256sum class-07-content-mate-pack.zip</pre></div>
+<pre>sha256sum class-07-content-mate-pack-v2-calendar.zip</pre></div>
     <div class="code"><div class="code-label">expected</div><button class="cp" type="button">copy</button>
-<pre class="wrap">3ab30c9ee032a04884ed8352391c318e614aef1e025930d99020f02c9e6c39c1</pre></div>
+<pre class="wrap">6df18a8db0c90c4b0b64a7d710aae0401c2fb2abd81271e313200f4ba856a45a</pre></div>
 
     <p>Rather read the prompt before running it? <a href="install.txt">Here it is</a>. Do that with anything you get off the internet — including from me.</p>
     <p><a href="setup-gate.html">The setup gate</a> covers the nine accounts, duplicating the Airtable base, and the credential names.</p>
@@ -429,6 +430,53 @@ Telegram                       -&gt;  tells you it went out</pre>
     <h2>Approve or deny — your ten minutes a day</h2>
     <p>The Review view, the Schedule view, and buttons that call webhooks. Telegram tells you when something went out.</p>
     <p><strong>This is the part the system actually needs from you</strong>, and it is the whole reason it is safe to run. Nothing publishes that you did not look at.</p>
+  </section>
+
+  <!-- CALENDAR -->
+  <section class="section" id="calendar">
+    <h2>Seeing it as a calendar</h2>
+    <p class="lead">A list answers <em>"what is queued?"</em>. A month grid answers <em>"what is going out this week?"</em> — and it can live in the calendar you already look at every day.</p>
+
+    <p>Airtable's <strong>Create</strong> table gets a Calendar view, coloured by status, showing <strong>what is queued and what already went out</strong>. From there it goes into Google Calendar or Apple Calendar — but <strong>not the same way</strong>, and the difference is not obvious until it has cost you.</p>
+
+    <div class="danger">
+      <div class="danger-t">Google refreshes a subscribed feed every 8 to 24 hours</div>
+      <p>Not configurable. No manual refresh button. Google throttles external calendar fetches and does not publish the interval.</p>
+      <p style="margin-bottom:0"><strong>Content Mate publishes three times a day.</strong> So a post going out this morning may not show up in Google Calendar until tomorrow — which looks exactly like a broken integration and is not one.</p>
+    </div>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th></th><th>Subscribe to the feed</th><th>n8n writes real events</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Apple Calendar</strong></td><td><strong>Good</strong> — set refresh to 15 minutes</td><td>works, unnecessary</td></tr>
+          <tr><td><strong>Google Calendar</strong></td><td>lags up to a day</td><td><strong>instant</strong></td></tr>
+          <tr><td>Setup</td><td>~2 minutes, no code</td><td>one node, one credential</td></tr>
+          <tr><td>Costs you</td><td>a public URL</td><td>a Calendar credential</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="does">
+      <div class="does-t">On Apple take the feed. On Google write real events.</div>
+      <p>The Google path is cheaper than it sounds: <strong>the Cloud project and OAuth client already exist</strong>, because Content Mate uses Google Drive. You enable the Calendar API on the same project and add one credential — not a new consent screen from scratch.</p>
+    </div>
+
+    <div class="warn">
+      <div class="warn-t">The iCal link is a public, unauthenticated URL</div>
+      <p>Anyone holding it can read your content queue — your scripts and your schedule. Not your keys, but not nothing.</p>
+      <p style="margin-bottom:0">And you cannot lock it down: Airtable's own docs say a share link with a password or domain restriction <strong>stops working as an iCal feed</strong>, because the calendar app cannot authenticate. If the queue is sensitive, use the n8n path — it never creates a public URL.</p>
+    </div>
+
+    <div class="note">
+      <div class="note-t">Write the event after publishing, not before</div>
+      <p>A calendar entry for something that failed to post is worse than no entry, because you will believe it went out. <strong>The calendar should record what happened, not what was intended.</strong></p>
+      <p style="margin-bottom:0">Want the queue visible too? Write it to a <em>second</em> calendar you can toggle off, prefixed <code>[queued]</code> against <code>[posted]</code>.</p>
+    </div>
+
+    <p>It does <strong>not</strong> schedule anything — the timing lives in n8n's three triggers, and moving an event does not move a post. That is deliberate: a calendar that could silently re-time your publishing is one that can publish something at 3am because you dragged it while half asleep.</p>
+
+    <p><strong>Full detail ships in the pack as <code>CALENDAR.md</code></strong>, including which field to build the view on and what to put in each event.</p>
   </section>
 
   <!-- ═══════════ BREAKS ═══════════ -->
