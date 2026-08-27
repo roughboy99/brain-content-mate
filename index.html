@@ -279,15 +279,15 @@
 
       <div class="osonly show" data-os="mac">
         <div class="code"><div class="code-label">macOS · Terminal</div><button class="cp" type="button">copy</button>
-<pre class="wrap">curl -fsSL -o install.txt https://roughboy99.github.io/brain-class-07/install.txt && claude "Read install.txt in this folder and follow it exactly, from the top."</pre></div>
+<pre class="wrap">curl -fsSL -o install.txt https://roughboy99.github.io/brain-content-mate/install.txt && claude "Read install.txt in this folder and follow it exactly, from the top."</pre></div>
       </div>
       <div class="osonly" data-os="linux">
         <div class="code"><div class="code-label">Linux / WSL · bash</div><button class="cp" type="button">copy</button>
-<pre class="wrap">curl -fsSL -o install.txt https://roughboy99.github.io/brain-class-07/install.txt && claude "Read install.txt in this folder and follow it exactly, from the top."</pre></div>
+<pre class="wrap">curl -fsSL -o install.txt https://roughboy99.github.io/brain-content-mate/install.txt && claude "Read install.txt in this folder and follow it exactly, from the top."</pre></div>
       </div>
       <div class="osonly" data-os="win">
         <div class="code"><div class="code-label">Windows · PowerShell</div><button class="cp" type="button">copy</button>
-<pre class="wrap">Invoke-WebRequest -Uri "https://roughboy99.github.io/brain-class-07/install.txt" -OutFile install.txt; claude "Read install.txt in this folder and follow it exactly, from the top."</pre></div>
+<pre class="wrap">Invoke-WebRequest -Uri "https://roughboy99.github.io/brain-content-mate/install.txt" -OutFile install.txt; claude "Read install.txt in this folder and follow it exactly, from the top."</pre></div>
       </div>
 
       <div class="warn">
@@ -303,9 +303,9 @@
     </div>
 
     <div class="code"><div class="code-label">verify the file you downloaded</div><button class="cp" type="button">copy</button>
-<pre>sha256sum class-07-content-mate-pack-v2.zip</pre></div>
+<pre>sha256sum content-mate-pack-v2.zip</pre></div>
     <div class="code"><div class="code-label">expected</div><button class="cp" type="button">copy</button>
-<pre class="wrap">7ad686739e4d6d20b83edbe3ba9fd8d53f3a0ece4382d9a2267c0ef3159b8d6d</pre></div>
+<pre class="wrap">6833c67f2cdb119a775d600222e4b8e032a62d8d2c3d4a202303cde1a72580c4</pre></div>
 
     <p>Rather read the prompt before running it? <a href="install.txt">Here it is</a>. Do that with anything you get off the internet — including from me.</p>
     <p><a href="setup-gate.html">The setup gate</a> covers the nine accounts, duplicating the Airtable base, and the credential names.</p>
@@ -578,11 +578,11 @@ Telegram                       -&gt;  tells you it went out</pre>
   function showOS(os){
     buttons.forEach(function(b){ b.classList.toggle("on", b.dataset.os === os); });
     panels.forEach(function(p){ p.classList.toggle("show", p.dataset.os === os); });
-    try { localStorage.setItem("bc07-os", os); } catch(e){ /* private mode */ }
+    try { localStorage.setItem("bcm-os", os); } catch(e){ /* private mode */ }
   }
 
   function detectOS(){
-    try { var s = localStorage.getItem("bc07-os"); if (s) return s; } catch(e){ /* fall through */ }
+    try { var s = localStorage.getItem("bcm-os"); if (s) return s; } catch(e){ /* fall through */ }
     var ua = navigator.userAgent || "";
     if (/Windows/i.test(ua)) return "win";
     if (/Mac OS X|Macintosh/i.test(ua)) return "mac";
@@ -632,7 +632,7 @@ Telegram                       -&gt;  tells you it went out</pre>
   });
 
   document.querySelectorAll(".check input[type=checkbox]").forEach(function(box){
-    var key = "bc07-" + box.id;
+    var key = "bcm-" + box.id;
     try { if (localStorage.getItem(key) === "1") box.checked = true; } catch(e){ /* blocked */ }
     box.addEventListener("change", function(){
       try {

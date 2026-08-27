@@ -55,7 +55,7 @@ Do not ask me questions you can answer by looking.
 workflow inside it is Andy Hafell's, shared with AI Auto Base by permission. It comes
 from the pinned Skool post, not from a public URL.
 
-Ask me where I saved `class-07-content-mate-pack-v2.zip`. Search the obvious places first
+Ask me where I saved `content-mate-pack-v2.zip`. Search the obvious places first
 (Downloads, Desktop, the current folder) and tell me if you find it rather than making
 me look.
 
@@ -66,15 +66,15 @@ classroom, and wait.
 
 Download the published checksum:
 
-https://roughboy99.github.io/brain-class-07/downloads/SHA256SUMS
+https://roughboy99.github.io/brain-content-mate/downloads/SHA256SUMS
 
 The zip must have this SHA-256:
 
-  7ad686739e4d6d20b83edbe3ba9fd8d53f3a0ece4382d9a2267c0ef3159b8d6d
+  6833c67f2cdb119a775d600222e4b8e032a62d8d2c3d4a202303cde1a72580c4
 
-Mac / Linux / WSL:   sha256sum class-07-content-mate-pack-v2.zip
-Mac (if missing):    shasum -a 256 class-07-content-mate-pack-v2.zip
-Windows PowerShell:  Get-FileHash class-07-content-mate-pack-v2.zip -Algorithm SHA256
+Mac / Linux / WSL:   sha256sum content-mate-pack-v2.zip
+Mac (if missing):    shasum -a 256 content-mate-pack-v2.zip
+Windows PowerShell:  Get-FileHash content-mate-pack-v2.zip -Algorithm SHA256
 
 Compare it yourself and tell me match or no match.
 
@@ -84,10 +84,10 @@ and that I should download it again from the community post.
 ## Step 5 - Unzip it into its own folder
 
 Mac / Linux / WSL:
-  unzip -o class-07-content-mate-pack-v2.zip -d content-mate-pack
+  unzip -o content-mate-pack-v2.zip -d content-mate-pack
 
 Windows PowerShell:
-  Expand-Archive -Path class-07-content-mate-pack-v2.zip -DestinationPath content-mate-pack -Force
+  Expand-Archive -Path content-mate-pack-v2.zip -DestinationPath content-mate-pack -Force
 
 Six files should come out. List them for me.
 
@@ -209,7 +209,7 @@ saved.
 
 Open the gate page in my browser rather than reading a wall of text at me:
 
-https://roughboy99.github.io/brain-class-07/setup-gate.html
+https://roughboy99.github.io/brain-content-mate/setup-gate.html
 
   Linux            xdg-open setup-gate.html
   Mac              open setup-gate.html

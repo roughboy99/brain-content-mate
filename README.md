@@ -3,7 +3,7 @@
 **An optional side class in *The Brain That Runs a Company*.** One node holds the wiring
 for a hundred and six. That pattern is worth more than the workflow it came in.
 
-> **Student front door: https://roughboy99.github.io/brain-class-07/**
+> **Student front door: https://roughboy99.github.io/brain-content-mate/**
 >
 > That page is the reference — the cost gate, the credits, the stack named honestly, the
 > traps, and the one command. The eight lessons live in the classroom; this page is what
@@ -12,7 +12,7 @@ for a hundred and six. That pattern is worth more than the workflow it came in.
 **Eight lessons, in the classroom, watched at your own pace** ·
 [AI Automations by Hector](https://www.skool.com/ai-automations-by-hector-8106)
 
-> This used to be Class 7, delivered live. It moved to the classroom on 2026-08-27 — the
+> This used to be delivered live. It moved to the classroom on 2026-08-27 — the
 > outline held 95 minutes of material against a 60-minute hour, nothing else in the series
 > depends on it, and a nine-provider video pipeline is a bad thing to demo live.
 
@@ -61,14 +61,14 @@ downloaded.
 **The checksum is published**, so you can still prove your copy is the real one:
 
 ```bash
-sha256sum class-07-content-mate-pack-v2.zip
+sha256sum content-mate-pack-v2.zip
 ```
 
 | File | SHA-256 |
 |---|---|
-| `class-07-content-mate-pack-v2.zip` | `7ad686739e4d6d20b83edbe3ba9fd8d53f3a0ece4382d9a2267c0ef3159b8d6d` |
+| `content-mate-pack-v2.zip` | `6833c67f2cdb119a775d600222e4b8e032a62d8d2c3d4a202303cde1a72580c4` |
 
-47,785 bytes · 8 files · built 2026-08-27. Also at [`downloads/SHA256SUMS`](downloads/SHA256SUMS).
+47,774 bytes · 8 files · built 2026-08-27. Also at [`downloads/SHA256SUMS`](downloads/SHA256SUMS).
 
 ---
 
@@ -79,13 +79,13 @@ Run it in a folder you do not mind it writing to. It needs Claude Code.
 **macOS / Linux / WSL**
 
 ```bash
-curl -fsSL -o install.txt https://roughboy99.github.io/brain-class-07/install.txt && claude "Read install.txt in this folder and follow it exactly, from the top."
+curl -fsSL -o install.txt https://roughboy99.github.io/brain-content-mate/install.txt && claude "Read install.txt in this folder and follow it exactly, from the top."
 ```
 
 **Windows PowerShell**
 
 ```powershell
-Invoke-WebRequest -Uri "https://roughboy99.github.io/brain-class-07/install.txt" -OutFile install.txt; claude "Read install.txt in this folder and follow it exactly, from the top."
+Invoke-WebRequest -Uri "https://roughboy99.github.io/brain-content-mate/install.txt" -OutFile install.txt; claude "Read install.txt in this folder and follow it exactly, from the top."
 ```
 
 **The first thing it does is try to talk you out of it.** It asks the three questions above

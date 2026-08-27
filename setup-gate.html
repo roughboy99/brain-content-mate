@@ -434,7 +434,7 @@ Error: Cannot find module './toString'</pre>
   /* Nine accounts is a lot to open in one sitting - ticks persist so people
      can walk away and come back. Per-viewer, never leaves the browser. */
   document.querySelectorAll(".step-tick input").forEach(function(box, i){
-    var key = "bc07-gate-" + i;
+    var key = "bcm-gate-" + i;
     try { if (localStorage.getItem(key) === "1") box.checked = true; } catch(e){ /* blocked */ }
     box.addEventListener("change", function(){
       try {
