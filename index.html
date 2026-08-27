@@ -303,9 +303,9 @@
     </div>
 
     <div class="code"><div class="code-label">verify the file you downloaded</div><button class="cp" type="button">copy</button>
-<pre>sha256sum class-07-content-mate-pack-v2-calendar.zip</pre></div>
+<pre>sha256sum class-07-content-mate-pack-v2.zip</pre></div>
     <div class="code"><div class="code-label">expected</div><button class="cp" type="button">copy</button>
-<pre class="wrap">6df18a8db0c90c4b0b64a7d710aae0401c2fb2abd81271e313200f4ba856a45a</pre></div>
+<pre class="wrap">7ad686739e4d6d20b83edbe3ba9fd8d53f3a0ece4382d9a2267c0ef3159b8d6d</pre></div>
 
     <p>Rather read the prompt before running it? <a href="install.txt">Here it is</a>. Do that with anything you get off the internet — including from me.</p>
     <p><a href="setup-gate.html">The setup gate</a> covers the nine accounts, duplicating the Airtable base, and the credential names.</p>
@@ -452,14 +452,21 @@ Telegram                       -&gt;  tells you it went out</pre>
           <tr><td><strong>Apple Calendar</strong></td><td><strong>Good</strong> — set refresh to 15 minutes</td><td>works, unnecessary</td></tr>
           <tr><td><strong>Google Calendar</strong></td><td>lags up to a day</td><td><strong>instant</strong></td></tr>
           <tr><td>Setup</td><td>~2 minutes, no code</td><td>one node, one credential</td></tr>
-          <tr><td>Costs you</td><td>a public URL</td><td>a Calendar credential</td></tr>
+          <tr><td>Costs you</td><td>a public URL</td><td>Google auth — which Drive needs anyway</td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="does">
       <div class="does-t">On Apple take the feed. On Google write real events.</div>
-      <p>The Google path is cheaper than it sounds: <strong>the Cloud project and OAuth client already exist</strong>, because Content Mate uses Google Drive. You enable the Calendar API on the same project and add one credential — not a new consent screen from scratch.</p>
+      <p><strong>You have to do Google authentication for this class either way</strong> — every avatar, music track and finished video goes into Google Drive, so the Cloud project, the consent screen and the OAuth client are required whether or not you ever add a calendar. Budget 20–30 minutes, one-off, free.</p>
+      <p style="margin-bottom:0">Once that is done the calendar is genuinely small: enable the Calendar API on the same project, add one credential using the <strong>same client ID and secret</strong>, add one node. <code>GOOGLE-AUTH.md</code> in the pack walks the whole thing.</p>
+    </div>
+
+    <div class="danger">
+      <div class="danger-t">And the one that breaks a week later</div>
+      <p>If you leave the Google OAuth app in <strong>"Testing"</strong> with External user type, <strong>Google expires your consent and refresh tokens after seven days.</strong> Content Mate runs on a schedule, so the Drive uploads and the calendar events simply stop — with nothing to tell you why.</p>
+      <p style="margin-bottom:0">Publishing the app to <strong>"In production"</strong> fixes it, costs nothing, and does not make anything public. It is step 6 of <code>GOOGLE-AUTH.md</code> and it is not optional.</p>
     </div>
 
     <div class="warn">

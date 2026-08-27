@@ -55,7 +55,7 @@ Do not ask me questions you can answer by looking.
 workflow inside it is Andy Hafell's, shared with AI Auto Base by permission. It comes
 from the pinned Skool post, not from a public URL.
 
-Ask me where I saved `class-07-content-mate-pack-v2-calendar.zip`. Search the obvious places first
+Ask me where I saved `class-07-content-mate-pack-v2.zip`. Search the obvious places first
 (Downloads, Desktop, the current folder) and tell me if you find it rather than making
 me look.
 
@@ -70,11 +70,11 @@ https://roughboy99.github.io/brain-class-07/downloads/SHA256SUMS
 
 The zip must have this SHA-256:
 
-  6df18a8db0c90c4b0b64a7d710aae0401c2fb2abd81271e313200f4ba856a45a
+  7ad686739e4d6d20b83edbe3ba9fd8d53f3a0ece4382d9a2267c0ef3159b8d6d
 
-Mac / Linux / WSL:   sha256sum class-07-content-mate-pack-v2-calendar.zip
-Mac (if missing):    shasum -a 256 class-07-content-mate-pack-v2-calendar.zip
-Windows PowerShell:  Get-FileHash class-07-content-mate-pack-v2-calendar.zip -Algorithm SHA256
+Mac / Linux / WSL:   sha256sum class-07-content-mate-pack-v2.zip
+Mac (if missing):    shasum -a 256 class-07-content-mate-pack-v2.zip
+Windows PowerShell:  Get-FileHash class-07-content-mate-pack-v2.zip -Algorithm SHA256
 
 Compare it yourself and tell me match or no match.
 
@@ -84,10 +84,10 @@ and that I should download it again from the community post.
 ## Step 5 - Unzip it into its own folder
 
 Mac / Linux / WSL:
-  unzip -o class-07-content-mate-pack-v2-calendar.zip -d content-mate-pack
+  unzip -o class-07-content-mate-pack-v2.zip -d content-mate-pack
 
 Windows PowerShell:
-  Expand-Archive -Path class-07-content-mate-pack-v2-calendar.zip -DestinationPath content-mate-pack -Force
+  Expand-Archive -Path class-07-content-mate-pack-v2.zip -DestinationPath content-mate-pack -Force
 
 Six files should come out. List them for me.
 
@@ -113,6 +113,50 @@ Say that out loud when you get there, in one line, rather than letting me find o
 later: they cost me the same either way, and the plain domains work identically.
 
 Then ask me again whether I want to continue. This is the last cheap moment to stop.
+
+## Step 6b - Google authentication, the longest single item
+
+Read content-mate-pack/GOOGLE-AUTH.md to me and then walk me through it.
+
+Do not skip this and do not summarise it away. **A Google Drive folder ID is not access.**
+The workflow needs an OAuth credential to write into my Drive, which means a Google Cloud
+project, a consent screen and a client ID. It is 20 to 30 minutes, one-off, and free -
+and it is the piece most likely to be assumed rather than done.
+
+I have NOT set Content Mate up before. Assume nothing exists.
+
+Things I want you to be explicit about, because each one fails with an error naming the
+wrong cause:
+
+  - Enable the Google DRIVE API on the project. If I also want the calendar, enable the
+    Google CALENDAR API at the same time - same project, same client, no second setup.
+  - The OAuth client application type is **Web application**, not Desktop. Only Web
+    application has the redirect URL field.
+  - **Copy the OAuth Redirect URL out of n8n. Do not retype it.** It must match exactly -
+    protocol, domain, port, path. A mismatch gives redirect_uri_mismatch.
+  - If the consent screen is External, add my own Google address as a **test user**, or
+    sign-in fails with access_denied and no explanation.
+  - Name the n8n credential **exactly** `Google Drive account`. The workflow ships with
+    credential ids stripped so n8n matches by name; the right token under the wrong name
+    attaches to nothing.
+
+Then the one that matters most, and I want you to say it back to me in your own words
+before we move on:
+
+  **If the OAuth app is left in "Testing" with External user type, Google expires the
+  consent and refresh tokens after SEVEN DAYS.** This workflow runs on a schedule, so my
+  Drive uploads would simply stop about a week from now, quietly, with nothing pointing at
+  the cause. Publishing the app to "In production" fixes it, costs nothing, and does not
+  make anything public.
+
+Check it with me before we continue:
+  - the credential shows connected in n8n
+  - the publishing status reads "In production" (or the user type is Internal)
+  - a Google Drive node actually put a file in my Drive - **check Drive, not the green
+    node**
+
+Then have me write down the date I did this. If uploads start failing in about a week, the
+first thing to check is the publishing status, and that note will save an hour.
 
 ## Step 7 - Prove my n8n can even run this
 

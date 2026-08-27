@@ -61,14 +61,14 @@ downloaded.
 **The checksum is published**, so you can still prove your copy is the real one:
 
 ```bash
-sha256sum class-07-content-mate-pack-v2-calendar.zip
+sha256sum class-07-content-mate-pack-v2.zip
 ```
 
 | File | SHA-256 |
 |---|---|
-| `class-07-content-mate-pack-v2-calendar.zip` | `6df18a8db0c90c4b0b64a7d710aae0401c2fb2abd81271e313200f4ba856a45a` |
+| `class-07-content-mate-pack-v2.zip` | `7ad686739e4d6d20b83edbe3ba9fd8d53f3a0ece4382d9a2267c0ef3159b8d6d` |
 
-42,746 bytes · 7 files · built 2026-08-27. Also at [`downloads/SHA256SUMS`](downloads/SHA256SUMS).
+47,785 bytes · 8 files · built 2026-08-27. Also at [`downloads/SHA256SUMS`](downloads/SHA256SUMS).
 
 ---
 

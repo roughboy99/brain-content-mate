@@ -225,14 +225,33 @@ docker compose up -d</pre></div>
 
   <!-- 8 -->
   <div class="step" data-step="8">
-    <div class="step-head"><div class="step-num">8</div><div class="step-title">Google Drive</div><span class="cost">free 15 GB</span>
+    <div class="step-head"><div class="step-num">8</div><div class="step-title">Google Drive</div><span class="cost slowtag">free · 20–30 min</span>
       <label class="step-tick"><input type="checkbox"> done</label></div>
-    <p>Stores avatars, music and finished video. Make one new folder and copy the folder ID from the end of its URL.</p>
+    <p>Stores avatars, music and finished video. <strong>Two separate jobs here</strong>, and the second is the one people are not expecting.</p>
+
+    <p><strong>a) The folder.</strong> Make one, copy the folder ID from the end of its URL.</p>
     <div class="danger">
       <div class="danger-t">Set sharing to "Anyone with the link" → "Viewer"</div>
       <p>Skip this and Replicate and Blotato cannot fetch your files. <strong>Both fail with an error that does not say why.</strong></p>
     </div>
-    <div class="bring"><div class="bring-t">Bring</div><p>The folder ID</p></div>
+
+    <p><strong>b) Google authentication — budget 20 to 30 minutes.</strong></p>
+    <p>A folder ID is not access. n8n needs an <strong>OAuth credential</strong> to write into your Drive, and that means a Google Cloud project, a consent screen and a client ID. It is the longest single item in this whole setup, and it is one-off and free.</p>
+    <a class="btn" href="https://console.cloud.google.com" target="_blank" rel="noopener noreferrer">Google Cloud Console →</a>
+    <div class="warn">
+      <div class="warn-t">Follow GOOGLE-AUTH.md in the pack — do not improvise it</div>
+      <p>There are four places this fails with an error that names the wrong cause. The most common is <code>redirect_uri_mismatch</code>, which means the URL you pasted into Google does not exactly match the one n8n shows — <strong>copy it from n8n rather than retyping it</strong>, protocol and port included.</p>
+    </div>
+    <div class="danger">
+      <div class="danger-t">The one that breaks a week later</div>
+      <p>Leave the OAuth app in <strong>"Testing"</strong> with External user type and <strong>Google expires your consent and refresh tokens after seven days.</strong> Content Mate runs on a schedule, so your uploads just stop, quietly.</p>
+      <p style="margin-bottom:0"><strong>Publish the app to "In production."</strong> Free, does not make anything public, and it is the difference between a setup that lasts and one that dies next Tuesday.</p>
+    </div>
+    <div class="warn">
+      <div class="warn-t">Name the credential exactly <code>Google Drive account</code></div>
+      <p>The workflow ships with credential ids stripped so n8n matches <strong>by name</strong>. The right token under the wrong name attaches to nothing.</p>
+    </div>
+    <div class="bring"><div class="bring-t">Bring</div><p>The folder ID, <strong>and</strong> a connected <code>Google Drive account</code> credential in n8n with the consent screen <strong>published</strong></p></div>
   </div>
 
   <!-- 9 -->
@@ -342,6 +361,9 @@ Error: Cannot find module './toString'</pre>
         <tr><td>A blank avatar or silent music track</td><td>The workflow picks one at random from each table, and <strong>an empty row is a valid choice</strong> as far as it is concerned. Delete what you are not using.</td></tr>
         <tr><td>Credential has the right key but attaches to nothing</td><td>n8n links credentials <strong>by name</strong>, not by id. Name them exactly as the workflow expects.</td></tr>
         <tr><td>An OpenAI node returns 404</td><td>The model was retired. Read their docs — the workflow is not wrong.</td></tr>
+        <tr><td><code>redirect_uri_mismatch</code> from Google</td><td>The URL in Google Cloud does not exactly match the one n8n shows. Copy it from n8n — protocol, port and trailing slash all count.</td></tr>
+        <tr><td>Drive worked for a week, then stopped</td><td><strong>The OAuth app was left in "Testing."</strong> Google expired the tokens after seven days. Publish the app and reconnect.</td></tr>
+        <tr><td><code>access_denied</code> when signing in to Google</td><td>External + Testing, and you are not on the test-user list. Add yourself, or publish the app.</td></tr>
       </tbody>
     </table>
   </div>
@@ -349,7 +371,7 @@ Error: Cannot find module './toString'</pre>
   <!-- BACK -->
   <h2>Done — tell Claude Code</h2>
   <div class="code"><div class="code-label">paste into Claude Code</div><button class="cp" type="button">copy</button>
-<pre>I finished the setup gate. All nine accounts are open, my n8n is self-hosted with ffmpeg and Execute Command and N8N_DEFAULT_BINARY_DATA_MODE=filesystem, I duplicated the Airtable base into my own workspace and filled the Setup table, and I installed the Blotato community node from the n8n interface and saved. Verify what you can rather than believing me, then carry on.</pre></div>
+<pre>I finished the setup gate. All nine accounts are open, my n8n is self-hosted with ffmpeg and Execute Command and N8N_DEFAULT_BINARY_DATA_MODE=filesystem, I duplicated the Airtable base into my own workspace and filled the Setup table, and I installed the Blotato community node from the n8n interface and saved. For Google: the Cloud project exists, the Drive API is enabled, the credential is connected and named exactly "Google Drive account", and the consent screen is PUBLISHED rather than left in Testing. Verify what you can rather than believing me, then carry on.</pre></div>
 
   <div class="note">
     <div class="note-t">Where to ask what</div>
