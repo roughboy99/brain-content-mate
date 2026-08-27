@@ -203,9 +203,10 @@ their docs before you change the workflow.
 | 2 · Give It Senses | n8n and Postgres | Aug 19 |
 | 3 · Ask Your Brain | Memory it can search | [brain-class-03](https://roughboy99.github.io/brain-class-03/) |
 | 4 · Ears and a Voice | Telegram in, spoken answers out | [brain-class-04](https://roughboy99.github.io/brain-class-04/) |
-| 5 · Hands and a Clock | The 7am digest, draft-don't-send | Sep 9 |
-| 6 · The Graph | What connects to what | Sep 16 |
-| **7 · Content Mate** | **The public voice — optional** | **here** |
+| 5 · Hands and a Clock | The 7am digest, draft-don't-send | [brain-class-05](https://roughboy99.github.io/brain-class-05/) |
+| 6 · The Graph | What connects to what | [brain-class-06](https://roughboy99.github.io/brain-class-06/) |
+| 7 · A Clock It Can Read | Your real calendar, both directions | [brain-class-07](https://roughboy99.github.io/brain-class-07/) |
+| **— · Content Mate** | **The public voice — optional, unnumbered** | **here** |
 
 ---
 
